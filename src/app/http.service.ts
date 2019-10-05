@@ -6,9 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
-  myMethod() {
+ /*  myMethod() {
     return console.log('Hey whatsup');
+  }; */
+
+  getBeer() {
+    return this.http.get('https://api.openbrewerydb.org/breweries');
   }
 }
